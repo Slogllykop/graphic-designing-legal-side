@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    &::after,
+    &::before {
+        @extend *;
+    }
+}
+
+$navbarHeight: 3.5rem;
+
+@mixin flex($flex-direction, $alignitems, $justifycontent) {
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $alignitems;
+    justify-content: $justifycontent;
+}
+
+body {
+    background-color: rgb(228, 228, 228);
+}
+
+.navbar {
+    @include flex(row, center, space-between);
+    padding: 1rem;
+    width: 100%;
+    height: $navbarHeight;
+
+    * {
+        text-decoration: none;
+        color: black;
+    }
+
+    &_container {
+        @include flex(row, center, space-between);
+        width: 100%;
+
+        a > b {
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-family: "Poppins", sans-serif;
+            color: limegreen;
+        }
+    }
+
+    .website_menu {
+        @include flex(row, center, flex-end);
+        list-style: none;
+        width: 50%;
+    }
+
+    &_menu {
+        margin: 0 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        font-family: "Poppins", sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover a {
+            color: limegreen;
+        }
+    }
+}

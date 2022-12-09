@@ -1,0 +1,88 @@
+@import "navbar";
+
+.header {
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    height: calc(100vh - $navbarHeight);
+
+    &_main {
+        font-size: 20px;
+        @include flex(column, center, center);
+        width: 100%;
+        height: 100%;
+        gap: 1rem;
+
+        & > h1 {
+            color: white;
+        }
+
+        & > h1::before {
+            height: 65px;
+            width: 290px;
+            content: "";
+            position: absolute;
+            background-color: limegreen;
+            padding: 0.2rem 0.5rem;
+            z-index: -1;
+            transform: translate(-4.5%, -4.9%) skewX(-20deg);
+        }
+
+        & > h2 > span {
+            color: white;
+        }
+
+        & > h2 > span::before {
+            height: 50px;
+            width: 280px;
+            content: "";
+            position: absolute;
+            background-color: limegreen;
+            padding: 0.2rem 0.5rem;
+            z-index: -1;
+            transform: translate(-2%, -5%) skewX(-20deg);
+        }
+
+        & > p {
+            width: 80%;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+    }
+
+    &_main_about {
+        @extend .header_main;
+        font-size: 16px;
+        text-align: center;
+        gap: 1.2rem;
+
+        *::before {
+            display: none;
+        }
+
+        & > h1 {
+            font-size: 1.4rem;
+            width: 85%;
+            color: limegreen;
+        }
+
+        & > h2 {
+            font-size: 1.1rem;
+            width: 85%;
+            font-weight: 600;
+        }
+
+        & > ul {
+            position: relative;
+            margin-top: 1.5rem;
+
+            li {
+                font-size: 1rem;
+                margin: 1rem auto;
+                width: 85%;
+                text-align: center;
+                list-style-type: none;
+                line-height: 120%;
+            }
+        }
+    }
+}
